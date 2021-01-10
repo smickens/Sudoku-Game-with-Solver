@@ -127,8 +127,9 @@ class Board:
 				cellNotes = ""
 				for note in cell.notes:
 					cellNotes += str(note)
-				noteText = smallFont.render(cellNotes, True, cell.GIVEN_TEXT)
-				window.blit(noteText, (cell.rect.x+(cell.rect.width/2)-noteText.get_width() // 2, cell.rect.y+2+(cell.rect.height/2)-noteText.get_height() // 2))
+				if cellNotes != "":
+					noteText = smallFont.render(cellNotes, True, cell.GIVEN_TEXT)
+					window.blit(noteText, (cell.rect.x+(cell.rect.width/2)-noteText.get_width() // 2, cell.rect.y+2+(cell.rect.height/2)-noteText.get_height() // 2))
 
 		for i in range(3):
 			for j in range(3):
